@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Privacy Policy and Datenschutzerklärung for StarLens 0.9, 0.9.2, 0.9.3 and 0.9.4.">
+  <meta name="description" content="Privacy Policy and Datenschutzerklärung for StarLens 0.9, 0.9.2, 0.9.3, 0.9.4 and 1.0.">
   <title>StarLens – Privacy Policy / Datenschutzerklärung</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -25,28 +25,37 @@
   <nav aria-label="Language selection"><a href="#english" lang="en">English</a> · <a href="#deutsch" lang="de">Deutsch</a></nav>
   <section id="english" lang="en">
     <h1>StarLens – Privacy Policy</h1>
-    <p class="meta">Applies to StarLens 0.9, 0.9.2, 0.9.3 and 0.9.4 (<code>de.starlens.app</code>) · Effective: 20 September 2026 · Updated: 29 September 2026</p>
+    <p class="meta">Applies to StarLens 0.9, 0.9.2, 0.9.3, 0.9.4 and 1.0 (<code>de.starlens.app</code>) · Effective: 20 September 2026 · Updated: 9 October 2026</p>
 
     <h2>Summary</h2>
-    <p>StarLens is an offline Android app for exploring stars and constellations. It has no internet permission and sends no usage, location, camera or diagnostic data to us. There are no accounts, ads, analytics or crash-reporting SDKs and no StarLens backend.</p>
+    <p>StarLens is an offline Android app for exploring stars and constellations. It has no internet permission and the app itself sends no usage, location, camera or diagnostic data to us. There are no accounts, ads, analytics or crash-reporting SDKs and no StarLens backend. What Google Play provides to us as the developer is described under <a href="#en-google-play">Information we receive through Google Play</a>.</p>
     <p>Libraries may add the <code>ACCESS_NETWORK_STATE</code> permission. That only lets the app see whether a network is available. Without <code>INTERNET</code>, StarLens cannot transmit data over the internet.</p>
 
     <h2>Permissions and purposes</h2>
     <ul>
-      <li><strong>Precise and approximate location:</strong> optional and foreground only. Used when you tap “Use current location”, to calculate your local sky. There is no background location and no continuous tracking. Each tap starts a short, one-shot request; updates are removed after the first usable fix. A last-known system location is used only if it is at most about two minutes old. You can instead pick a city or enter coordinates.</li>
+      <li><strong>Precise and approximate location:</strong> optional. Used when you tap “Use current location”, to calculate your local sky. There is no automatically started background location or continuous tracking. Each tap starts a one-shot request lasting at most 20 seconds; updates are removed after the first usable fix, on timeout or when you close the location picker. Moving the app to the background does not explicitly end a pending request early; the system’s location access rules still apply. No background location permission is requested. A last-known system location is used only if it is at most about two minutes old. You can instead pick a city or enter coordinates.</li>
       <li><strong>Camera:</strong> requested only after you start the Camera tab. Used solely as a live preview of the rear camera for the AR overlay. StarLens does not recognise stars in the camera image, does not capture photos or video and does not upload images. The preview ends when you leave the tab or the app goes into the background.</li>
     </ul>
     <p>StarLens does not request background location, storage, microphone or internet permission.</p>
     <p>From version 0.9.3, place-name search uses the bundled GeoNames data entirely offline. No location permission is needed for this search; queries never leave the device and are not sent to GeoNames.</p>
 
     <h2>What is stored on the device</h2>
-    <p>If you set a location, StarLens stores latitude, longitude, a display name, whether the location was confirmed and whether it came from a location service, the time of the request and the accuracy reported by the system. Until you confirm a location, the app uses the example city Berlin; that is not your location.</p>
-    <p>Also stored locally: the list of saved constellations and, if you save them, the catalog numbers of individual stars, night mode, and a camera fine adjustment (heading offset and field-of-view scale). Device time is used for sky calculations; there is no usage log or time history. Orientation and magnetic-field sensor readings are used for AR alignment and are not stored as a history. Camera characteristics such as sensor size and focal length are read locally to size the overlay; they are device metadata, not recordings.</p>
+    <p>If you set a location, StarLens stores latitude, longitude, a display name, whether the location was confirmed and whether it came from a location service, the time of the location fix (not the request) and the accuracy reported by the system. Until you confirm a location, the app uses the example city Berlin; that is not your location.</p>
+    <p>Also stored locally: the list of saved constellations and, if you save them, the catalog numbers of individual stars, night mode, and a camera fine adjustment (heading offset and field-of-view scale). Device time and time zone are used for sky calculations and to show local times; there is no usage log or time history. A preview time you choose with “Tonight” is not stored permanently in the app’s settings; Android may save it as session state to restore it after rotation or process loss. Orientation and magnetic-field sensor readings are used for AR alignment and are not stored as a history. Camera characteristics such as sensor size and focal length are read locally to size the overlay; they are device metadata, not recordings.</p>
     <p>Android cloud backup and device-to-device transfer are disabled for StarLens.</p>
 
     <h2>System services and Google Play</h2>
     <p>Obtaining a location may use GPS and the operating system’s network location provider. Device-maker or Google system services can take part; their own terms apply to that processing. StarLens receives the result only on the device and does not forward it.</p>
+    <p>AndroidX components may request compatible emoji fonts through an installed Android system font provider. That system service may contact its own services; its provider’s terms and privacy information apply. This is not a StarLens backend or transmission of location or camera data by StarLens. Actual network requests by the font provider have not been tested.</p>
     <p>Download, paid purchase, installation, updates and licence checks are handled by Google Play. Google processes data under its own privacy policy. StarLens has no billing SDK and does not receive or store payment data.</p>
+
+    <h2 id="en-google-play">Information we receive through Google Play</h2>
+    <p>As the developer, we receive the following information from Google Play. StarLens itself does not collect it.</p>
+    <ul>
+      <li><strong>Sales reports:</strong> order number, date, product and price of a purchase and the buyer’s country; depending on the country of sale also further location details such as region or postal code. We do not receive payment card details. We use these reports for accounting and to meet tax and commercial record-keeping duties (Article 6(1)(c) GDPR) and keep them for the statutory retention periods.</li>
+      <li><strong>Ratings and reviews:</strong> if you rate or review StarLens on Google Play, we see your review with the public name of your Google profile and technical details provided by Google, such as device model, Android version and app version. We use them to reply and to improve the app (Article 6(1)(f) GDPR).</li>
+      <li><strong>Statistics and crash reports:</strong> Google provides aggregated statistics, for example installs by country, device or Android version. If you allow your device to share usage and diagnostics data with Google, we also receive crash and “app not responding” reports (Android vitals) with technical details such as device model, Android version and the program state at the time of the error, but without your name or contact details. We use them to find and fix errors (Article 6(1)(f) GDPR). You can turn off sharing usage and diagnostics in your Android or Google settings.</li>
+    </ul>
 
     <h2>External source links</h2>
     <p>Settings can open links to the IAU, the Wolbach Library (CfA) and d3-celestial. They open in another app only after you tap them. From that moment the privacy terms of that provider apply. StarLens does not load those pages itself.</p>
@@ -60,7 +69,7 @@
 
     <h2>Your rights</h2>
     <p>Where the GDPR applies, you have the rights of access, rectification, erasure, restriction, data portability, objection to processing based on Article 6(1)(f) where that basis is used, withdrawal of consent for the future, and a complaint to a supervisory authority (Articles 15–18, 20, 21, 7(3) and 77 GDPR).</p>
-    <p>Because StarLens keeps this information only on your device, you exercise access, correction and deletion there: change or clear the location, reset the fine adjustment, clear app storage or uninstall. We cannot remotely access the data on your device.</p>
+    <p>Because StarLens keeps this information only on your device, you exercise access, correction and deletion there: change or clear the location, reset the fine adjustment, clear app storage or uninstall. We cannot remotely access the data on your device. For information we receive through Google Play or by email, contact us at the address below.</p>
     <p>You may lodge a complaint with a data-protection authority, in particular where you live or where the controller is established. The authority for the controller’s seat is the State Commissioner for Data Protection and Freedom of Information Baden-Württemberg (LfDI), Lautenschlagerstraße 20, 70173 Stuttgart, <a href="https://www.baden-wuerttemberg.datenschutz.de">www.baden-wuerttemberg.datenschutz.de</a>.</p>
 
     <h2>Children’s privacy</h2>
@@ -76,7 +85,7 @@
     <p><strong>Developer and data controller:</strong> Timo Lopetuso</p>
     <address>
       Basler Straße 82<br>
-      Freiburg<br>
+      79100 Freiburg<br>
       Germany
     </address>
     <p><strong>Privacy and support contact:</strong> <a href="mailto:StarLens@web.de">StarLens@web.de</a></p>
@@ -86,28 +95,37 @@
 
   <section id="deutsch" class="language" lang="de">
     <h1>StarLens – Datenschutzerklärung</h1>
-    <p class="meta">Gültig für StarLens 0.9, 0.9.2, 0.9.3 und 0.9.4 (<code>de.starlens.app</code>) · Gültig seit: 20. September 2026 · Aktualisiert: 29. September 2026</p>
+    <p class="meta">Gültig für StarLens 0.9, 0.9.2, 0.9.3, 0.9.4 und 1.0 (<code>de.starlens.app</code>) · Gültig seit: 20. September 2026 · Aktualisiert: 9. Oktober 2026</p>
 
     <h2>Kurzfassung</h2>
-    <p>StarLens ist eine offline nutzbare Android-App zur Erkundung von Sternen und Sternbildern. Sie besitzt keine Internetberechtigung und sendet keine Nutzungs-, Standort-, Kamera- oder Diagnosedaten an uns. Es gibt keine Benutzerkonten, keine Werbung, keine Analyse- oder Absturz-SDKs und kein StarLens-Backend.</p>
+    <p>StarLens ist eine offline nutzbare Android-App zur Erkundung von Sternen und Sternbildern. Sie besitzt keine Internetberechtigung, und die App selbst sendet keine Nutzungs-, Standort-, Kamera- oder Diagnosedaten an uns. Es gibt keine Benutzerkonten, keine Werbung, keine Analyse- oder Absturz-SDKs und kein StarLens-Backend. Was Google Play uns als Entwickler bereitstellt, steht unter <a href="#de-google-play">Was wir über Google Play erhalten</a>.</p>
     <p>Bibliotheken können die Berechtigung <code>ACCESS_NETWORK_STATE</code> einbinden. Damit lässt sich nur erkennen, ob eine Netzverbindung besteht. Ohne <code>INTERNET</code> kann StarLens keine Daten ins Internet übertragen.</p>
 
     <h2>Berechtigungen und Zwecke</h2>
     <ul>
-      <li><strong>Präziser und ungefährer Standort:</strong> freiwillig und nur im Vordergrund. Wird verwendet, wenn Sie „Aktuellen Standort verwenden“ wählen, um Ihren lokalen Himmel zu berechnen. Es gibt keine Standortabfrage im Hintergrund und keine fortlaufende Verfolgung. Jede Nutzung der Schaltfläche ist eine eigene, kurze Abfrage; nach dem ersten verwertbaren Ergebnis werden die Updates entfernt. Ein zuletzt bekannter Systemstandort wird nur verwendet, wenn er höchstens etwa zwei Minuten alt ist. Alternativ können Sie eine Stadt wählen oder Koordinaten eingeben.</li>
+      <li><strong>Präziser und ungefährer Standort:</strong> freiwillig. Wird verwendet, wenn Sie „Aktuellen Standort verwenden“ wählen, um Ihren lokalen Himmel zu berechnen. Es gibt keine automatisch gestartete Hintergrundortung und keine fortlaufende Verfolgung. Jede Nutzung der Schaltfläche startet eine eigene Abfrage von höchstens 20 Sekunden; nach dem ersten verwertbaren Ergebnis, bei Zeitablauf oder beim Schließen der Standortauswahl werden die Updates entfernt. Ein Wechsel in den Hintergrund beendet eine bereits angeforderte Abfrage nicht ausdrücklich vorzeitig; die Systemregeln für Standortzugriff gelten weiterhin. Eine Hintergrund-Standortberechtigung wird nicht angefordert. Ein zuletzt bekannter Systemstandort wird nur verwendet, wenn er höchstens etwa zwei Minuten alt ist. Alternativ können Sie eine Stadt wählen oder Koordinaten eingeben.</li>
       <li><strong>Kamera:</strong> erst nach dem Start des Kamera-Reiters. Ausschließlich Live-Vorschau der Rückkamera für die AR-Überlagerung. StarLens erkennt keine Sterne im Kamerabild, nimmt keine Fotos oder Videos auf und lädt keine Bilder hoch. Die Vorschau endet, wenn Sie den Reiter verlassen oder die App in den Hintergrund wechselt.</li>
     </ul>
     <p>StarLens fordert keine Hintergrundortung, keine Speicher-, Mikrofon- oder Internetberechtigung an.</p>
     <p>Ab Version 0.9.3 verwendet die Ortsnamensuche die mitgelieferten GeoNames-Daten vollständig offline. Dafür ist keine Standortberechtigung nötig; Suchanfragen verlassen das Gerät nicht und werden nicht an GeoNames übermittelt.</p>
 
     <h2>Was auf dem Gerät gespeichert wird</h2>
-    <p>Wenn Sie einen Standort setzen, speichert StarLens Breite und Länge, einen Anzeigenamen, ob der Standort bestätigt wurde und ob er von einem Standortdienst stammt, den Zeitpunkt der Abfrage und die vom System gemeldete Genauigkeit. Bis zu Ihrer Bestätigung rechnet die App mit dem Beispielort Berlin; das ist nicht Ihr Standort.</p>
-    <p>Ebenfalls lokal gespeichert: die Merkliste (Kennungen gemerkter Sternbilder und, sofern gemerkt, die Katalognummern einzelner Sterne), der Nachtmodus und ein Feinabgleich der Kameraansicht (Richtungsversatz und Bildwinkel-Skala). Die Gerätezeit dient den Himmelsberechnungen; es gibt kein Nutzungsprotokoll und keine Zeithistorie. Lage- und Magnetfeldsensoren dienen der AR-Ausrichtung und werden nicht als Verlauf gespeichert. Technische Kameradaten wie Sensorgröße und Brennweite werden lokal gelesen, um die Überlagerung zu dimensionieren; das sind Gerätemetadaten, keine Aufnahmen.</p>
+    <p>Wenn Sie einen Standort setzen, speichert StarLens Breite und Länge, einen Anzeigenamen, ob der Standort bestätigt wurde und ob er von einem Standortdienst stammt, den Zeitpunkt des Standort-Fixes (der Standortbestimmung, nicht der Anfrage) und die vom System gemeldete Genauigkeit. Bis zu Ihrer Bestätigung rechnet die App mit dem Beispielort Berlin; das ist nicht Ihr Standort.</p>
+    <p>Ebenfalls lokal gespeichert: die Merkliste (Kennungen gemerkter Sternbilder und, sofern gemerkt, die Katalognummern einzelner Sterne), der Nachtmodus und ein Feinabgleich der Kameraansicht (Richtungsversatz und Bildwinkel-Skala). Gerätezeit und Zeitzone dienen den Himmelsberechnungen und der Anzeige lokaler Uhrzeiten; es gibt kein Nutzungsprotokoll und keine Zeithistorie. Eine mit „Heute Abend“ gewählte Vorschauzeit wird nicht dauerhaft in den App-Einstellungen gespeichert; Android kann die Auswahl als Sitzungszustand zur Wiederherstellung nach einer Drehung oder einem Prozessverlust sichern. Lage- und Magnetfeldsensoren dienen der AR-Ausrichtung und werden nicht als Verlauf gespeichert. Technische Kameradaten wie Sensorgröße und Brennweite werden lokal gelesen, um die Überlagerung zu dimensionieren; das sind Gerätemetadaten, keine Aufnahmen.</p>
     <p>Android-Cloud-Backup und der Gerätetransfer sind für StarLens deaktiviert.</p>
 
     <h2>Systemdienste und Google Play</h2>
     <p>Die Standortermittlung kann GPS und den Netzwerk-Standortanbieter des Betriebssystems nutzen. Daran können Dienste des Geräteherstellers oder von Google beteiligt sein; für deren eigene Verarbeitung gelten deren Bedingungen. StarLens empfängt das Ergebnis nur auf dem Gerät und leitet es nicht weiter.</p>
+    <p>AndroidX-Komponenten können kompatible Emoji-Schriften über einen installierten Android-System-Schriftanbieter anfordern. Dieser Systemdienst kann seinerseits eigene Dienste kontaktieren; dafür gelten die Bedingungen und Datenschutzhinweise seines Anbieters. Dies ist kein StarLens-Backend und keine Übermittlung von Standort- oder Kameradaten durch StarLens. Ein tatsächlicher Netzabruf des Schriftanbieters wurde nicht geprüft.</p>
     <p>Download, Kauf als kostenpflichtige App, Installation, Updates und Lizenzprüfung wickelt Google Play ab. Google verarbeitet Daten nach seiner eigenen Datenschutzerklärung. StarLens enthält kein Bezahl-SDK und empfängt oder speichert keine Zahlungsdaten.</p>
+
+    <h2 id="de-google-play">Was wir über Google Play erhalten</h2>
+    <p>Als Entwickler erhalten wir von Google Play die folgenden Angaben. StarLens selbst erhebt sie nicht.</p>
+    <ul>
+      <li><strong>Verkaufsberichte:</strong> Bestellnummer, Datum, Produkt und Preis eines Kaufs sowie das Land des Käufers; je nach Verkaufsland auch weitere Ortsangaben wie Region oder Postleitzahl. Zahlungskartendaten erhalten wir nicht. Wir nutzen diese Berichte für die Buchhaltung und zur Erfüllung steuer- und handelsrechtlicher Aufbewahrungspflichten (Art. 6 Abs. 1 lit. c DSGVO) und bewahren sie für die gesetzlichen Fristen auf.</li>
+      <li><strong>Bewertungen und Rezensionen:</strong> Wenn Sie StarLens bei Google Play bewerten, sehen wir Ihre Rezension mit dem öffentlichen Namen Ihres Google-Profils und von Google bereitgestellten technischen Angaben wie Gerätemodell, Android- und App-Version. Wir nutzen sie, um zu antworten und die App zu verbessern (Art. 6 Abs. 1 lit. f DSGVO).</li>
+      <li><strong>Statistiken und Absturzberichte:</strong> Google stellt zusammengefasste Statistiken bereit, etwa Installationen nach Land, Gerät oder Android-Version. Wenn Sie auf Ihrem Gerät das Teilen von Nutzungs- und Diagnosedaten mit Google erlaubt haben, erhalten wir außerdem Absturz- und „App reagiert nicht“-Berichte (Android Vitals) mit technischen Angaben wie Gerätemodell, Android-Version und dem Programmzustand zum Fehlerzeitpunkt, aber ohne Ihren Namen oder Kontaktdaten. Wir nutzen sie, um Fehler zu finden und zu beheben (Art. 6 Abs. 1 lit. f DSGVO). Das Teilen von Nutzungs- und Diagnosedaten können Sie in den Android- bzw. Google-Einstellungen abschalten.</li>
+    </ul>
 
     <h2>Externe Quellenlinks</h2>
     <p>Unter Einstellungen können Links zur IAU, zur Wolbach Library (CfA) und zu d3-celestial geöffnet werden. Sie öffnen sich erst nach Ihrem Antippen in einer anderen App. Ab diesem Zeitpunkt gelten die Datenschutzbedingungen des jeweiligen Anbieters. StarLens lädt diese Seiten nicht selbst.</p>
@@ -121,7 +139,7 @@
 
     <h2>Ihre Rechte</h2>
     <p>Soweit die DSGVO anwendbar ist, stehen Ihnen Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO, soweit eine solche Grundlage genutzt wird, Widerruf einer Einwilligung mit Wirkung für die Zukunft sowie Beschwerde bei einer Aufsichtsbehörde zu (Art. 15–18, 20, 21, 7 Abs. 3 und 77 DSGVO).</p>
-    <p>Weil StarLens die Angaben nur auf Ihrem Gerät verarbeitet, setzen Sie Auskunft, Berichtigung und Löschung dort um: Standort ändern oder löschen, Feinabgleich zurücksetzen, App-Speicher leeren oder deinstallieren. Wir haben keinen Fernzugriff auf die Daten auf Ihrem Gerät.</p>
+    <p>Weil StarLens die Angaben nur auf Ihrem Gerät verarbeitet, setzen Sie Auskunft, Berichtigung und Löschung dort um: Standort ändern oder löschen, Feinabgleich zurücksetzen, App-Speicher leeren oder deinstallieren. Wir haben keinen Fernzugriff auf die Daten auf Ihrem Gerät. Zu Angaben, die wir über Google Play oder per E-Mail erhalten, wenden Sie sich an die unten genannte Adresse.</p>
     <p>Eine Beschwerde können Sie bei einer Datenschutzaufsichtsbehörde einlegen, insbesondere am Ort Ihres gewöhnlichen Aufenthalts oder am Sitz des Verantwortlichen. Die zuständige Behörde für den Sitz des Verantwortlichen ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI), Lautenschlagerstraße 20, 70173 Stuttgart, <a href="https://www.baden-wuerttemberg.datenschutz.de">www.baden-wuerttemberg.datenschutz.de</a>.</p>
 
     <h2>Datenschutz für Kinder</h2>
@@ -137,7 +155,7 @@
     <p><strong>Entwickler und Verantwortlicher:</strong> Timo Lopetuso</p>
     <address>
       Basler Straße 82<br>
-      Freiburg<br>
+      79100 Freiburg<br>
       Deutschland
     </address>
     <p><strong>Datenschutz- und Supportkontakt:</strong> <a href="mailto:StarLens@web.de">StarLens@web.de</a></p>
